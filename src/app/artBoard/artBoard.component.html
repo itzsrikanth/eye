@@ -1,0 +1,40 @@
+<div id="art-board" class="w-100">
+
+	<header class="w-100 d-flex justify-content-between align-items-center">
+    <span id="right" class="d-flex align-items-center ml-3">
+      <i class="fa fa-bars" title="Menu"></i>
+    </span>
+		<span>Deja-Vu Eye Clinic</span>
+    <span id="right" class="d-flex align-items-center mr-3">
+      <i class="fa fa-bell" title="Notifications"></i>
+      <i class="fa fa-cogs" title="Settings"></i>
+    </span>
+	</header>
+
+	<div class="body d-flex flex-row p-2">
+
+		<div class="d-flex flex-row m-1 p-2 align-items-center" title="Font Size">
+			<i class="fa fa-font"></i>
+			<select id="font" [ngModel]="selectedFont" #fontTrv (change)="fontSelect(fontTrv.value)" class="form-control ml-2">
+        <option *ngFor="let font of fonts" [value]="font">{{ font + ' px' }}</option>
+      </select>
+		</div>
+
+		<div class="d-flex flex-row m-1 p-2 align-items-center" title="Speed (Words per Min)">
+			<i class="fa fa-tachometer"></i>
+			<select id="speed" [ngModel]="selectedSpeed" class="form-control ml-2">
+      <option *ngFor="let wpm of speed" [value]="wpm">{{ wpm + ' wpm' }}</option>
+    </select>
+		</div>
+
+    <button class="btn btn-light m-1" title="Set as default values">
+      <i class="fa fa-forward"></i>&nbsp;Set Default
+    </button>
+
+		<i class="fa fa-desktop p-2" (click)="mapData()" title="Full Screen (F11)"></i>
+
+	</div>
+
+	<div class="d-flex m-2 text-box p-5 flex-column" #textEditor></div>
+
+</div>

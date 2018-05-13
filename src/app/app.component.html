@@ -1,0 +1,3 @@
+<art-board [hidden]="fullMode" (fullScreen)="fullMode = true; dataTransfer($event)"></art-board>
+<full-screen *ngIf="fullMode" [data]="data" (fullScreen)="fullMode = false"></full-screen>
+

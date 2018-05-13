@@ -1,0 +1,9 @@
+<div id="full-screen" class="d-flex align-items-center">
+	<div #holder id="run-holder">
+		<div #sliding [style.left.px]="left">
+			<span class="run-display" *ngFor="let char of data" [style.fontSize.px]="char.font*2">{{ char.text }}</span>
+		</div>
+	</div>
+</div>
+
+<button (click)="changeTrigger()" id="change">Change</button>
